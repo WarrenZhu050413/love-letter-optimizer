@@ -1,0 +1,41 @@
+# Love Letter Evolution Configuration
+# Optimizes prompts to generate the most beautiful love letters
+
+# Evolution parameters
+max_iterations: 50
+checkpoint_interval: 10
+log_level: "INFO"
+
+# LLM configuration with single model setup
+llm:
+  models:
+    - name: "opus"
+      weight: 1.0
+      temperature: 0.8
+      max_tokens: 2000
+
+# Prompt configuration
+prompt:
+  system_message: "You are an expert at writing beautiful, authentic love letters. Focus on emotional depth, specific imagery, and avoiding clichés. Evolve prompts to create the most moving romantic letters ever written."
+  num_top_programs: 3
+  num_diverse_programs: 2
+  use_template_stochasticity: true
+
+# Database configuration for evolution
+database:
+  population_size: 30
+  archive_size: 15
+  num_islands: 3
+  elite_selection_ratio: 0.2
+  exploitation_ratio: 0.7
+
+# Evaluator configuration  
+evaluator:
+  timeout: 120
+  cascade_evaluation: false
+  parallel_evaluations: 4
+  use_llm_feedback: false
+
+# Evolution strategy
+diff_based_evolution: true
+allow_full_rewrites: false
