@@ -11,6 +11,14 @@ from pathlib import Path
 from claude_code_sdk import ClaudeSDKClient, ClaudeCodeOptions, CLINotFoundError, ProcessError
 
 
+# Quality benchmark letters for reference (used internally for calibration)
+BENCHMARK_LETTERS = {
+    "terrible": "hey babe ur hot lol wanna date? i like ur face and stuff. roses r red violets r blue sugar is sweet and so r u. call me maybe??? love, some guy",
+    "mediocre": "Dear Sarah, I've been thinking about you a lot lately. There's something special about the way you see the world. Your passion for environmental science is inspiring. I hope this isn't too forward, but I wanted you to know that you've become someone very important to me. Yours truly, Michael",
+    "excellent": "Elena, Three months ago, you told me that time moves differently when you're looking through a microscope. Yesterday, when you rescued that spider from the lab sink instead of washing it down the drain, I saw something that made my chest tighten in the most wonderful way. These small revelations about who you are have begun to rewrite something fundamental in me. Hopefully yours, David"
+}
+
+
 # Enhanced discriminatory scoring system for love letters
 ENHANCED_SCORING_REFERENCE = """
 You are an expert literary critic specializing in romantic literature and love letters.
